@@ -1,13 +1,14 @@
 package cn.fcsca.springbootmybatis.controller;
 
-import cn.fcsca.springbootmybatis.bean.Department;
-import cn.fcsca.springbootmybatis.bean.Employee;
-import cn.fcsca.springbootmybatis.mapper.DepartmentMapper;
-import cn.fcsca.springbootmybatis.mapper.EmployeeMapper;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import cn.fcsca.springbootmybatis.bean.User;
+import cn.fcsca.springbootmybatis.mapper.UserMapper;
 
 /**
  * DepartmentController
@@ -20,24 +21,23 @@ import org.springframework.web.bind.annotation.RestController;
 public class DepartmentController {
 
     @Autowired
-    DepartmentMapper departmentMapper;
+    UserMapper userMapper;
 
-    @Autowired
-    EmployeeMapper employeeMapper;
-
-    @GetMapping("/dept/{id}")
-    public Department getDepartment(@PathVariable("id") Integer id) {
-        return departmentMapper.getDeptById(id);
+    
+    
+    @GetMapping("/list")
+    public List<User> getUserList() {
+    	System.out.println("---------------");
+        return userMapper.getUserList();
     }
-
-    @GetMapping("/dept")
-    public Department insertDept(Department department) {
-        departmentMapper.insertDept(department);
-        return department;
+    
+    @PutMapping("/add")
+    public void add() {
+    	System.out.println("---------------");
+    	User user = new User();
+    	user.setAge(1);
+    	user.setName("大哥");
+         userMapper.add(user);
     }
-
-    @GetMapping("/emp/{id}")
-    public Employee getEmp(@PathVariable("id") Integer id) {
-        return employeeMapper.getEmpById(id);
-    }
+    
 }

@@ -1,8 +1,8 @@
 spring:
   datasource:
     username: root
-    password: 509165
-    url: jdbc:mysql:///springbootdata
+    password: 123456
+    url: jdbc:mysql://127.0.0.1:3306/ttpc?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
     driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
     schema:
