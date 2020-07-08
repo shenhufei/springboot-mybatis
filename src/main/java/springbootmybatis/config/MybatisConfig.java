@@ -1,13 +1,10 @@
-package cn.fcsca.springbootmybatis.config;
+package springbootmybatis.config;
 
 import org.apache.ibatis.session.Configuration;
 import org.mybatis.spring.boot.autoconfigure.ConfigurationCustomizer;
 import org.springframework.context.annotation.Bean;
 
 /**
- * MybatisConfig
- *
- * @author Fcscanf@樊乘乘
  * @description
  * @date 下午 16:44 2018-08-14
  */
